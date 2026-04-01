@@ -3,8 +3,8 @@ import { Orbit } from "lucide-react";
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2">
-      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-card-border bg-card text-primary">
+    <Link href="/" className="flex items-center gap-3">
+      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-primary">
         <Orbit size={18} />
       </span>
       <span className="text-lg font-semibold tracking-wide text-primary">

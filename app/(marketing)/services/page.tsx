@@ -1,7 +1,7 @@
 export default function ServicesPage() {
   return (
     <main className="container-main section-space">
-      <h1 className="text-4xl font-bold">Services</h1>
+      <h1 className="text-4xl font-bold text-white">Services</h1>
     </main>
   );
 }

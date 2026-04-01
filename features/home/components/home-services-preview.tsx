@@ -7,7 +7,7 @@ export function HomeServicesPreview() {
     <section className="section-space">
       <SectionHeading
         title="Our Services"
-        description="We offer integrated creative, technical, and business solutions designed to move your brand forward."
+        description="Integrated solutions that combine design, technical expertise, and strategic thinking to help businesses grow."
       />
 
       <div className="container-main mt-10 grid gap-6 md:grid-cols-2">

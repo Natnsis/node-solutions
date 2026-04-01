@@ -10,25 +10,25 @@ const features = [
   {
     title: "Expert Team",
     description:
-      "Our specialists combine business insight, creative thinking, and technical execution to deliver measurable value.",
+      "Our specialists combine strategy, creativity, and technical execution to deliver polished solutions with real business value.",
     icon: ShieldCheck,
   },
   {
     title: "Client-Centric Approach",
     description:
-      "We tailor every project to your goals, brand identity, and operational needs instead of using one-size-fits-all solutions.",
+      "We shape every project around your goals, your audience, and your business context instead of using generic templates.",
     icon: Users,
   },
   {
     title: "Results-Driven Solutions",
     description:
-      "From brand visibility to technical reliability, every solution is built to produce real business impact.",
+      "Every service is planned to improve visibility, strengthen operations, and create measurable impact across your brand.",
     icon: LineChart,
   },
   {
     title: "Collaborative Partnership",
     description:
-      "We work with you as an extension of your team to ensure alignment, transparency, and long-term success.",
+      "We work closely with your team throughout the project to ensure clarity, alignment, and long-term success.",
     icon: Handshake,
   },
 ];
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
     <section className="section-space pt-0">
       <SectionHeading
         title="Why Choose Node Solution?"
-        description="We blend strategy, creativity, and technology to build solutions that are visually strong and commercially effective."
+        description="We bring together creativity, operations, and technology to build connected experiences that support business growth."
       />
 
       <div className="container-main mt-10 grid gap-6 md:grid-cols-2">
@@ -48,13 +48,15 @@ export function WhyChooseUs() {
           return (
             <div
               key={item.title}
-              className="glass-card rounded-2xl p-6 shadow-soft"
+              className="glass-card rounded-2xl p-6 shadow-card"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-primary">
                 <Icon size={22} />
               </div>
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-text-muted">
+
+              <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
                 {item.description}
               </p>
             </div>

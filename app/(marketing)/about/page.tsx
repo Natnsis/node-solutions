@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
     <main className="container-main section-space">
-      <h1 className="text-4xl font-bold">About</h1>
+      <h1 className="text-4xl font-bold text-white">About</h1>
     </main>
   );
 }

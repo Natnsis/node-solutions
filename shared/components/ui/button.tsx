@@ -3,25 +3,25 @@ import { cn } from "@/shared/lib/utils";
 
 type ButtonProps = {
   children: React.ReactNode;
-  className?: string;
   href?: string;
+  className?: string;
   variant?: "primary" | "secondary" | "ghost";
 };
 
 export function Button({
   children,
-  className,
   href,
+  className,
   variant = "primary",
 }: ButtonProps) {
   const styles = cn(
     "inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium transition-all duration-300",
     variant === "primary" &&
-      "bg-primary text-black hover:bg-white",
+      "bg-primary text-[var(--color-primary-foreground)] hover:brightness-110",
     variant === "secondary" &&
-      "border border-card-border bg-card text-text hover:bg-white/10",
+      "border border-border bg-card text-foreground hover:bg-white/10",
     variant === "ghost" &&
-      "text-text-muted hover:text-white",
+      "text-muted-foreground hover:text-foreground",
     className
   );
 

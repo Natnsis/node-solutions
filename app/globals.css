@@ -187,7 +187,42 @@ button {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }
+.hero-subtitle {
+  color: rgba(15, 23, 32, 0.88);
+}
+  .premium-hover {
+    transition:
+      transform 0.45s ease,
+      box-shadow 0.45s ease,
+      border-color 0.45s ease,
+      background-color 0.45s ease;
+  }
 
+  .premium-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 32, 0.16);
+  }
+
+  .dark .premium-hover:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.36);
+  }
+
+  .accordion-panel {
+    transition:
+      grid-template-rows 0.45s ease,
+      opacity 0.35s ease;
+  }
+
+  .accordion-icon {
+    transition:
+      transform 0.35s ease,
+      color 0.35s ease,
+      background-color 0.35s ease,
+      border-color 0.35s ease;
+  }
+.dark .hero-subtitle {
+  color: rgba(245, 247, 250, 0.76);
+}
   .section-banner-bg {
     background:
       radial-gradient(circle at 50% 0%, rgba(79, 195, 247, 0.14), transparent 32%),

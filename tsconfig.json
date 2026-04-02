@@ -18,17 +18,16 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
+   
     "paths": {
       "@/*": ["./*"]
-    },
-    "ignoreDeprecations": "6.0"
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-     "**/*.jsx",
+    "**/*.jsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],

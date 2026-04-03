@@ -5,13 +5,12 @@ import {
   WhyChooseUs,
   TestimonialsPreview,
   FaqPreview,
-  ContactCta,
-  ContactFormPreview,
 } from "@/features/home";
+import { ContactCta, ContactForm } from "@/features/contact";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-background">
       <HeroSection />
       <BrandLogos />
       <HomeServicesPreview />
@@ -19,7 +18,7 @@ export default function HomePage() {
       <TestimonialsPreview />
       <FaqPreview />
       <ContactCta />
-      <ContactFormPreview />
+      <ContactForm />
     </main>
   );
 }

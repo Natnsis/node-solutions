@@ -7,8 +7,8 @@ export function AboutPageCta() {
     <section className="container-main pb-20">
       <div className="border border-border bg-[var(--background-soft)] p-6 shadow-card md:p-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border bg-card text-primary shadow-glow">
-            <AnimatedLogo size={64} mode="loop" />
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-4xl border border-border bg-card text-primary backdrop-blur-sm">
+             <AnimatedLogo size={64} mode="loop" />
           </div>
 
           <div className="flex-1">

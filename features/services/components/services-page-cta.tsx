@@ -1,5 +1,6 @@
 import { Orbit } from "lucide-react";
 import { Button } from "@/shared/components/ui/button";
+import { AnimatedLogo } from "@/shared/components/common/animated-logo";
 
 export function ServicesPageCta() {
   return (
@@ -9,8 +10,8 @@ export function ServicesPageCta() {
           <div className="absolute inset-0 grid-pattern opacity-25" />
 
           <div className="relative mx-auto max-w-3xl">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-primary backdrop-blur-sm">
-              <Orbit size={28} />
+            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-border bg-card text-primary backdrop-blur-sm">
+                         <AnimatedLogo size={64} mode="static" />
             </div>
 
             <h2 className="mt-6 text-2xl font-semibold text-foreground md:text-4xl">

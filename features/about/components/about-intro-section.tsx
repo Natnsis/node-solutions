@@ -1,4 +1,5 @@
-import { Orbit } from "lucide-react";
+import { AnimatedLogo } from "@/shared/components/common/animated-logo";
+;
 
 export function AboutIntroSection() {
   return (
@@ -34,7 +35,7 @@ export function AboutIntroSection() {
             <div className="absolute top-1/2 h-px w-full -translate-y-1/2 bg-white/30" />
 
             <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-glow">
-              <Orbit size={28} />
+              <AnimatedLogo size={64} mode="loop" />
             </div>
 
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_45%)]" />

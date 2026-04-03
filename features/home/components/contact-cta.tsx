@@ -1,3 +1,4 @@
+import { AnimatedLogo } from "@/shared/components/common/animated-logo";
 import { Button } from "@/shared/components/ui/button";
 import { Orbit } from "lucide-react";
 
@@ -6,8 +7,8 @@ export function ContactCta() {
     <section className="section-space pt-0">
       <div className="container-main">
         <div className="section-banner-bg rounded-3xl border border-border px-6 py-14 text-center shadow-glow md:px-10">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 text-primary backdrop-blur-sm">
-            <Orbit size={28} />
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-border bg-card text-primary backdrop-blur-sm">
+                       <AnimatedLogo size={64} mode="static" />
           </div>
 
           <h2 className="mt-6 text-2xl font-semibold text-white md:text-3xl">

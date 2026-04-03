@@ -34,7 +34,7 @@ export function AboutIntroSection() {
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/30" />
             <div className="absolute top-1/2 h-px w-full -translate-y-1/2 bg-white/30" />
 
-            <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-glow">
+            <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/60 text-primary shadow-glow">
               <AnimatedLogo size={64} mode="loop" />
             </div>
 

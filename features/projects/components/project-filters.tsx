@@ -10,8 +10,8 @@ export function ProjectFilters({
   onChange,
 }: ProjectFiltersProps) {
   return (
-    <section className="border-x border-b border-border bg-[var(--background-soft)] px-4 py-5 md:px-6">
-      <div className="flex flex-wrap gap-3">
+    <section className="border-x border-b border-border bg-[var(--background-soft)] px-4 py-5 md:px-6 items-center">
+      <div className="flex flex-wrap gap-3 items-center justify-center">
         {categories.map((category) => {
           const isActive = activeCategory === category;
 

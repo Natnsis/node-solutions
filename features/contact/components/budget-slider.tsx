@@ -1,9 +1,14 @@
 type BudgetSliderProps = {
   value: number;
   onChange: (value: number) => void;
+  error?: string;
 };
 
-export function BudgetSlider({ value, onChange }: BudgetSliderProps) {
+export function BudgetSlider({
+  value,
+  onChange,
+  error,
+}: BudgetSliderProps) {
   return (
     <div>
       <label className="mb-3 block text-sm font-medium text-foreground">
@@ -11,28 +16,31 @@ export function BudgetSlider({ value, onChange }: BudgetSliderProps) {
       </label>
 
       <p className="mb-4 text-sm leading-6 text-muted-foreground">
-        Give us a rough estimate so we can recommend the right solution scope.
+        Choose an estimated budget range in Ethiopian Birr (ETB) so we can
+        recommend the right project scope.
       </p>
 
       <div className="rounded-2xl border border-border bg-background p-5 shadow-card">
         <input
           type="range"
-          min="1000"
-          max="20000"
-          step="1000"
+          min="50000"
+          max="1000000"
+          step="50000"
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
           className="w-full accent-[var(--primary)]"
         />
 
         <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground sm:text-sm">
-          <span>$1K</span>
+          <span>ETB 50K</span>
           <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-medium text-primary">
-            ${value.toLocaleString()}
+            ETB {value.toLocaleString()}
           </span>
-          <span>$20K+</span>
+          <span>ETB 1M+</span>
         </div>
       </div>
+
+      {error ? <p className="mt-3 text-sm text-red-500">{error}</p> : null}
     </div>
   );
 }

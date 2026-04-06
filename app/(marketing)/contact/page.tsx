@@ -4,6 +4,7 @@ import {
   ContactCta,
   ContactForm,
 } from "@/features/contact";
+import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-section-button";
 
 export default function ContactPage() {
   return (
@@ -12,6 +13,7 @@ export default function ContactPage() {
       <ContactInfoCards />
       <ContactCta />
       <ContactForm />
+       <ScrollToSectionButton targetId="contact-top" />
     </main>
   );
 }

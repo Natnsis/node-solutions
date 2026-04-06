@@ -300,6 +300,55 @@ button {
   }
 
   /* Testimonials */
+    .testimonial-card-surface {
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.62));
+    border-color: rgba(111, 145, 173, 0.16);
+  }
+
+  .dark .testimonial-card-surface {
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.025), transparent 32%),
+      #171717;
+    border-color: rgba(255, 255, 255, 0.07);
+  }
+
+  .testimonial-card-overlay {
+    background:
+      radial-gradient(circle at top left, rgba(141, 183, 214, 0.16), transparent 34%);
+  }
+
+  .dark .testimonial-card-overlay {
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.025), transparent 32%);
+  }
+
+  .testimonial-icon-box {
+    border-color: rgba(111, 145, 173, 0.14);
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--foreground);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .dark .testimonial-icon-box {
+    border-color: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.02);
+    color: white;
+  }
+
+  .testimonial-tail-surface {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.62));
+    border-color: rgba(111, 145, 173, 0.16);
+  }
+
+  .dark .testimonial-tail-surface {
+    background: #171717;
+    border-color: rgba(255, 255, 255, 0.07);
+  }
+  
   .testimonial-marquee-wrapper:hover .testimonial-marquee {
     animation-play-state: paused;
   }

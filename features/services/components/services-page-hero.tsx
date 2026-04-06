@@ -3,7 +3,7 @@ import { Orbit } from "lucide-react";
 
 export function ServicesPageHero() {
   return (
-    <section className="pt-6 md:pt-8">
+    <section id="services-top" className="pt-6 md:pt-8">
       <div className="container-main">
         <div className="section-banner-bg relative overflow-hidden rounded-none border border-border px-6 py-16 text-center shadow-card md:px-10 md:py-20">
           <div className="absolute inset-0 grid-pattern opacity-25" />

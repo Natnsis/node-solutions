@@ -7,6 +7,7 @@ import {
   ServicesPageCta,
 } from "@/features/services";
 import { servicesPageData } from "@/features/services/data/services-page.data";
+import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-section-button";
 
 export default function ServicesPage() {
   const [openSlug, setOpenSlug] = useState<string>(
@@ -35,6 +36,7 @@ export default function ServicesPage() {
       </div>
 
       <ServicesPageCta />
+      <ScrollToSectionButton targetId="services-top" />
     </main>
   );
 }

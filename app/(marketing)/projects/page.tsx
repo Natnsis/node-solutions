@@ -8,14 +8,17 @@ import {
   ProjectsGrid,
   ProjectsPageCta,
 } from "@/features/projects";
-import { projectCategories, projectsData } from "@/features/projects/data/projects.data";
+import {
+  projectCategories,
+  projectsData,
+} from "@/features/projects/data/projects.data";
+import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-section-button";
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = useMemo(() => {
     if (activeCategory === "All") return projectsData;
-
     return projectsData.filter(
       (project) => project.category === activeCategory
     );
@@ -34,10 +37,10 @@ export default function ProjectsPage() {
       </div>
 
       <ProjectsIntro />
-
       <ProjectsGrid projects={filteredProjects} />
-
       <ProjectsPageCta />
+
+      <ScrollToSectionButton targetId="projects-top" />
     </main>
   );
 }

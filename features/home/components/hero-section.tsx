@@ -9,7 +9,10 @@ const tags = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section
+  id="home-top"
+  className="relative overflow-hidden border-b border-border"
+>
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{

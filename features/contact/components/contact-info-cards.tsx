@@ -23,7 +23,7 @@ const contactItems = [
 
 export function ContactInfoCards() {
   return (
-    <section className="section-space pb-10">
+    <section className="section-space ">
       <div className="container-main">
         <div className="grid gap-6 md:grid-cols-3">
           {contactItems.map((item) => {

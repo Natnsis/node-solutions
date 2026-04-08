@@ -1,13 +1,14 @@
 type ServiceOption = {
+  slug: string;
   title: string;
   description: string;
   image: string;
 };
 
 type ServiceInterestSelectorProps = {
-  options: ServiceOption[];
-  selected: string[];
-  onToggle: (value: string) => void;
+  options: ReadonlyArray<ServiceOption>; // ✅ accept readonly
+  selected: string[]; // ✅ should store slugs
+  onToggle: (value: string) => void; // value = slug
   onSelectAll: () => void;
   onClearAll: () => void;
   error?: string;
@@ -21,7 +22,8 @@ export function ServiceInterestSelector({
   onClearAll,
   error,
 }: ServiceInterestSelectorProps) {
-  const allSelected = selected.length === options.length;
+  const allSelected =
+    options.length > 0 && options.every((opt) => selected.includes(opt.slug));
 
   return (
     <div>
@@ -59,13 +61,13 @@ export function ServiceInterestSelector({
 
       <div className="grid gap-4 sm:grid-cols-2">
         {options.map((item) => {
-          const isSelected = selected.includes(item.title);
+          const isSelected = selected.includes(item.slug); // ✅ use slug
 
           return (
             <button
-              key={item.title}
+              key={item.slug}
               type="button"
-              onClick={() => onToggle(item.title)}
+              onClick={() => onToggle(item.slug)} // ✅ toggle slug
               className={`group relative overflow-hidden rounded-2xl border text-left transition-all duration-300 ${
                 isSelected
                   ? "border-primary shadow-glow"

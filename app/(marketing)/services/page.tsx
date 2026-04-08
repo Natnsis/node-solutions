@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
 import {
   ServicesPageHero,
   ServiceShowcaseSection,
@@ -10,9 +12,34 @@ import { servicesPageData } from "@/features/services/data/services-page.data";
 import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-section-button";
 
 export default function ServicesPage() {
-  const [openSlug, setOpenSlug] = useState<string>(
-    servicesPageData[0]?.slug ?? ""
-  );
+  const searchParams = useSearchParams();
+  const requestedSlug = searchParams.get("service");
+  const defaultSlug = servicesPageData[0]?.slug ?? "";
+
+  const initialOpenSlug = useMemo(() => {
+    if (!requestedSlug) return defaultSlug;
+    const exists = servicesPageData.some((s) => s.slug === requestedSlug);
+    return exists ? requestedSlug : defaultSlug;
+  }, [requestedSlug, defaultSlug]);
+
+  const [openSlug, setOpenSlug] = useState<string>(initialOpenSlug);
+
+  useEffect(() => {
+    setOpenSlug(initialOpenSlug);
+  }, [initialOpenSlug]);
+
+  useEffect(() => {
+    if (!requestedSlug) return;
+
+    const el = document.getElementById(`service-${requestedSlug}`);
+    if (!el) return;
+
+    const t = window.setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 120);
+
+    return () => window.clearTimeout(t);
+  }, [requestedSlug]);
 
   return (
     <main className="">
@@ -26,9 +53,7 @@ export default function ServicesPage() {
               service={service}
               isOpen={openSlug === service.slug}
               onToggle={() =>
-                setOpenSlug((current) =>
-                  current === service.slug ? "" : service.slug
-                )
+                setOpenSlug((current) => (current === service.slug ? "" : service.slug))
               }
             />
           ))}
@@ -36,7 +61,7 @@ export default function ServicesPage() {
       </div>
 
       <ServicesPageCta />
-      <ScrollToSectionButton targetId="services-top" />
+       <ScrollToSectionButton targetId="services-top" />
     </main>
   );
 }

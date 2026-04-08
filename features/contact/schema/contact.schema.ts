@@ -5,7 +5,6 @@ export const contactSchema = z.object({
   lastName: z.string().min(2, "Last name must be at least 2 characters."),
   email: z.string().email("Please enter a valid email address."),
   services: z.array(z.string()).min(1, "Select at least one service."),
-  budget: z.number().min(50000).max(1000000),
   message: z.string().min(10, "Please provide more project details."),
 });
 

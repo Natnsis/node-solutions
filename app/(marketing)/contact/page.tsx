@@ -9,10 +9,12 @@ import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-sect
 export default function ContactPage() {
   return (
     <main className="">
-      <ContactPageHero />
+          <ContactPageHero />
+      <ContactForm />
+  
       <ContactInfoCards />
       <ContactCta />
-      <ContactForm />
+      
        <ScrollToSectionButton targetId="contact-top" />
     </main>
   );

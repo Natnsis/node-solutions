@@ -11,7 +11,7 @@ import { ScrollToSectionButton } from "@/shared/components/common/scroll-to-sect
 
 export default function HomePage() {
   return (
-    <main className="bg-background">
+    <main className="">
       <HeroSection />
       <BrandLogos />
       <HomeServicesPreview />

@@ -361,6 +361,9 @@ button {
     .animate-scrollPulse {
     animation: scrollPulse 2.6s ease-in-out infinite;
   }
+  .faq-ease {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
   
   @media (max-width: 1024px) {
     .testimonial-marquee {

@@ -1,23 +1,23 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { BudgetSlider } from "./budget-slider";
 import { ServiceInterestSelector } from "./service-interest-selector";
 import { ContactSuccessModal } from "./contact-success-modal";
 import { contactServices } from "../data/contact-services.data";
-import {
-  contactSchema,
-  type ContactFormValues,
-} from "../schema/contact.schema";
+import { contactSchema, type ContactFormValues } from "../schema/contact.schema";
 import { submitContact } from "../actions/submit-contact";
 import { useToast } from "@/shared/components/common/toast-provider";
 import { LoadingOverlay } from "@/shared/components/common/loading-overlay";
 import { fireSuccessConfetti } from "@/shared/lib/confetti";
 
-export function ContactForm() {
+type ContactFormProps = {
+  prefillServiceSlug?: string;
+};
+
+export function ContactForm({ prefillServiceSlug }: ContactFormProps) {
   const [isPending, startTransition] = useTransition();
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [banner, setBanner] = useState<{
@@ -41,33 +41,57 @@ export function ContactForm() {
       firstName: "",
       lastName: "",
       email: "",
-      services: [],
-      budget: 9000,
+      services: [],   // stores slugs
       message: "",
     },
   });
 
   const selectedServices = watch("services");
-  const budgetValue = watch("budget");
 
-  const handleToggleService = (value: string) => {
+  // ✅ ensure we prefill only once (ever)
+  const hasPrefilledRef = useRef(false);
+
+  // ✅ Auto-select service from URL (?service=slug)
+  useEffect(() => {
+    if (!prefillServiceSlug) return;
+    if (hasPrefilledRef.current) return;
+
+    const current = selectedServices ?? [];
+    if (current.length > 0) {
+      hasPrefilledRef.current = true;
+      return;
+    }
+
+    const exists = contactServices.some((s) => s.slug === prefillServiceSlug);
+
+    if (exists) {
+      setValue("services", [prefillServiceSlug], {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
+
+    hasPrefilledRef.current = true;
+  }, [prefillServiceSlug, selectedServices, setValue]);
+
+  const handleToggleService = (slug: string) => {
     const current = selectedServices || [];
 
-    if (current.includes(value)) {
+    if (current.includes(slug)) {
       setValue(
         "services",
-        current.filter((item) => item !== value),
+        current.filter((item) => item !== slug),
         { shouldValidate: true }
       );
     } else {
-      setValue("services", [...current, value], { shouldValidate: true });
+      setValue("services", [...current, slug], { shouldValidate: true });
     }
   };
 
   const handleSelectAll = () => {
     setValue(
       "services",
-      contactServices.map((service) => service.title),
+      contactServices.map((service) => service.slug),
       { shouldValidate: true }
     );
   };
@@ -94,10 +118,7 @@ export function ContactForm() {
           });
         }
 
-        setBanner({
-          type: "error",
-          message: result.message,
-        });
+        setBanner({ type: "error", message: result.message });
 
         showToast({
           title: "Submission failed",
@@ -113,14 +134,10 @@ export function ContactForm() {
         lastName: "",
         email: "",
         services: [],
-        budget: 9000,
         message: "",
       });
 
-      setBanner({
-        type: "success",
-        message: result.message,
-      });
+      setBanner({ type: "success", message: result.message });
 
       fireSuccessConfetti();
       setShowSuccessModal(true);
@@ -140,7 +157,7 @@ export function ContactForm() {
         onClose={() => setShowSuccessModal(false)}
       />
 
-      <section className="pb-20">
+      <section className="pb-20 pt-10 md:pb-28 md:pt-16" id="contact-top">
         <div className="container-main">
           <div className="relative mx-auto max-w-5xl rounded-[30px] border border-border bg-[var(--background-soft)] p-6 shadow-card md:p-8 lg:p-10">
             {isPending ? <LoadingOverlay /> : null}
@@ -231,14 +248,6 @@ export function ContactForm() {
                 onSelectAll={handleSelectAll}
                 onClearAll={handleClearAll}
                 error={errors.services?.message}
-              />
-
-              <BudgetSlider
-                value={budgetValue}
-                onChange={(value) =>
-                  setValue("budget", value, { shouldValidate: true })
-                }
-                error={errors.budget?.message}
               />
 
               <div>

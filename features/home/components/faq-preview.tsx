@@ -1,12 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { Minus, Plus } from "lucide-react";
+import { useId, useMemo, useState } from "react";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { faqs } from "@/features/faq/data/faq.data";
+import { FaqCard } from "../../faq/components/faq-card";
 
 export function FaqPreview() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const baseId = useId();
+
+  // Split into two fixed columns so grid row heights don't stretch neighbors
+  const { left, right, mid } = useMemo(() => {
+    const mid = Math.ceil(faqs.length / 2);
+    return {
+      mid,
+      left: faqs.slice(0, mid),
+      right: faqs.slice(mid),
+    };
+  }, []);
 
   return (
     <section className="section-space pt-0">
@@ -15,41 +26,48 @@ export function FaqPreview() {
         description="Answers to common questions about our services, process, timelines, and support."
       />
 
-      <div className="container-main mt-10 grid gap-4 lg:grid-cols-2">
-        {faqs.map((faq, index) => {
-          const isOpen = openIndex === index;
+      <div className="container-main mt-10 grid items-start gap-4 lg:grid-cols-2 lg:gap-6">
+        {/* LEFT COLUMN */}
+        <div className="space-y-4">
+          {left.map((faq, i) => {
+            const index = i;
+            const isOpen = openIndex === index;
 
-          return (
-            <div
-              key={faq.question}
-              className="glass-card rounded-xl p-5 shadow-card"
-            >
-              <button
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-start justify-between gap-4 text-left"
-              >
-                <div>
-                  <p className="text-sm font-medium text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-2 text-base font-medium text-white">
-                    {faq.question}
-                  </h3>
-                </div>
+            return (
+              <FaqCard
+                key={faq.question}
+                question={faq.question}
+                answer={faq.answer}
+                number={String(index + 1).padStart(2, "0")}
+                isOpen={isOpen}
+                onToggle={() => setOpenIndex(isOpen ? null : index)}
+                panelId={`${baseId}-panel-${index}`}
+                buttonId={`${baseId}-button-${index}`}
+              />
+            );
+          })}
+        </div>
 
-                <span className="mt-1 text-primary">
-                  {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                </span>
-              </button>
+        {/* RIGHT COLUMN */}
+        <div className="space-y-4">
+          {right.map((faq, i) => {
+            const index = mid + i;
+            const isOpen = openIndex === index;
 
-              {isOpen && (
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                  {faq.answer}
-                </p>
-              )}
-            </div>
-          );
-        })}
+            return (
+              <FaqCard
+                key={faq.question}
+                question={faq.question}
+                answer={faq.answer}
+                number={String(index + 1).padStart(2, "0")}
+                isOpen={isOpen}
+                onToggle={() => setOpenIndex(isOpen ? null : index)}
+                panelId={`${baseId}-panel-${index}`}
+                buttonId={`${baseId}-button-${index}`}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

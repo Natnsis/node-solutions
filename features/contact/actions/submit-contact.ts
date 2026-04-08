@@ -3,10 +3,7 @@
 import { contactSchema, type ContactFormValues } from "../schema/contact.schema";
 
 type SubmitContactResult =
-  | {
-      success: true;
-      message: string;
-    }
+  | { success: true; message: string }
   | {
       success: false;
       message: string;
@@ -28,12 +25,8 @@ export async function submitContact(
   }
 
   try {
-    // TODO:
-    // - send email
-    // - save to DB / CMS
-    // - integrate Resend / Nodemailer / API
-
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    // TODO: send email / save to DB
+    await new Promise((resolve) => setTimeout(resolve, 900));
 
     console.log("Contact submission:", parsed.data);
 

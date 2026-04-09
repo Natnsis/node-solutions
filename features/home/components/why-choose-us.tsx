@@ -35,7 +35,7 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="section-space pt-0">
+    <section className="section-space">
       <SectionHeading
         title="Why Choose nod solution?"
         description="We bring together creativity, operations, and technology to build connected experiences that support business growth."

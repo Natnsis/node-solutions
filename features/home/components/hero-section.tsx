@@ -26,7 +26,7 @@ export function HeroSection() {
 
       <div className="container-main relative flex min-h-[88vh] flex-col items-center justify-center text-center">
         <div className="max-w-4xl">
-          <p className="mb-4 inline-flex rounded-full border border-border bg-card px-4 py-1 text-xs uppercase tracking-[0.2em] text-black dark:text-primary backdrop-blur-sm">
+          <p className="mb-4 inline-flex rounded-full border border-border bg-card px-4 py-1 text-xs uppercase tracking-[0.2em] text-black dark:text-white backdrop-blur-sm">
             Creative • Technical • Strategic
           </p>
 
@@ -36,7 +36,7 @@ export function HeroSection() {
           </h1>
 
           <p className="hero-subtitle mx-auto mt-5 max-w-2xl text-sm leading-7 md:text-lg">
-  Node Solution helps businesses grow through design, digital strategy,
+  nod solution helps businesses grow through design, digital strategy,
   printing excellence, and reliable IT infrastructure.
 </p>
 

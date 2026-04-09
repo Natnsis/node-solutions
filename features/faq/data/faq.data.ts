@@ -1,6 +1,6 @@
 export const faqs = [
   {
-    question: "What services does Node Solution provide?",
+    question: "What services does nod solution provide?",
     answer:
       "We provide digital marketing, creative printing, interior design & construction, and networking & IT solutions for modern businesses.",
   },

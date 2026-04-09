@@ -37,7 +37,7 @@ export function WhyChooseUs() {
   return (
     <section className="section-space pt-0">
       <SectionHeading
-        title="Why Choose Node Solution?"
+        title="Why Choose nod solution?"
         description="We bring together creativity, operations, and technology to build connected experiences that support business growth."
       />
 

@@ -19,7 +19,7 @@ export function AnimatedLogo({
     <div
       className={cn("shrink-0", className)}
       style={{ width: size, height: size }}
-      aria-label="Node Solution logo"
+      aria-label="nod solution logo"
     >
       <Lottie
         animationData={logoAnimation}

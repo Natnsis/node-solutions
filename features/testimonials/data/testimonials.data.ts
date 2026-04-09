@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     quote:
-      "Node Solution turned our business around! Their digital marketing strategies helped us reach new customers and increase our revenue by 30% in just a few months. Highly recommended!",
+      "nod solution turned our business around! Their digital marketing strategies helped us reach new customers and increase our revenue by 30% in just a few months. Highly recommended!",
     name: "Sarah Thompson",
     role: "CEO of BlueBloom Fashion",
     avatar:
@@ -9,7 +9,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Working with Node Solution was a pleasure. Their web design team created a stunning website that perfectly captured our brand's essence. The feedback from our customers has been overwhelmingly positive.",
+      "Working with nod solution was a pleasure. Their web design team created a stunning website that perfectly captured our brand's essence. The feedback from our customers has been overwhelmingly positive.",
     name: "Mark Roberts",
     role: "Founder of GreenEarth Eco Store",
     avatar:
@@ -17,7 +17,7 @@ export const testimonials = [
   },
   {
     quote:
-      "The mobile app Node Solution developed for us exceeded our expectations. Its user-friendly interface and seamless functionality have earned us rave reviews from our users.",
+      "The mobile app nod solution developed for us exceeded our expectations. Its user-friendly interface and seamless functionality have earned us rave reviews from our users.",
     name: "Lisa Williams",
     role: "Head of Product at HealthTech Innovations",
     avatar:
@@ -25,7 +25,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Node Solution transformed our outdated website into a modern, responsive platform. Their attention to detail and ability to understand our vision made the entire process smooth and hassle-free.",
+      "nod solution transformed our outdated website into a modern, responsive platform. Their attention to detail and ability to understand our vision made the entire process smooth and hassle-free.",
     name: "Michael Johnson",
     role: "Marketing Manager at GlobalTech",
     avatar:

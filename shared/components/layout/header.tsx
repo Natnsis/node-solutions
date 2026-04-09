@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="container-main relative flex h-20 items-center justify-between gap-4">
-        <Logo />
+        <Logo showText={false} />
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((item) => (

@@ -7,7 +7,7 @@ export function TestimonialsPreview() {
     <section className="section-space pt-0 overflow-hidden">
       <SectionHeading
         title="What Our Clients Say About Us"
-        description="Businesses trust Node Solution for dependable execution, thoughtful design, and long-term partnership."
+        description="Businesses trust nod solution for dependable execution, thoughtful design, and long-term partnership."
       />
 
       <div className="mt-10">

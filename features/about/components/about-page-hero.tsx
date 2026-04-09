@@ -18,7 +18,7 @@ export function AboutPageHero() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
-              Welcome to Node Solution, where collaboration, expertise, and
+              Welcome to nod solution, where collaboration, expertise, and
               client-centric thinking come together to shape impactful digital
               experiences.
             </p>

@@ -3,7 +3,7 @@ export function ProjectsIntro() {
     <section className="container-main pt-12 md:pt-14">
       <div className="max-w-3xl">
         <h2 className="text-3xl font-semibold tracking-tight text-foreground">
-          At Node Solution
+          At nod solution
         </h2>
 
         <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">

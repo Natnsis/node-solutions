@@ -13,7 +13,7 @@ export function AboutPageCta() {
 
           <div className="flex-1">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-              Today, Node Solution Continues to Thrive as a Leading Digital
+              Today, nod solution Continues to Thrive as a Leading Digital
               Solutions Agency.....
             </h2>
 
@@ -30,7 +30,7 @@ export function AboutPageCta() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
               <span className="rounded-md border border-border bg-card px-4 py-3 text-sm text-muted-foreground">
-                Welcome to Node Solution
+                Welcome to nod solution
               </span>
 
               <span className="rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground">

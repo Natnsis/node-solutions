@@ -28,7 +28,7 @@ export function Logo({
 
       {showText ? (
         <span className="text-lg font-semibold tracking-wide text-primary">
-          Node Solution
+          nod solution
         </span>
       ) : null}
     </Link>

@@ -5,7 +5,7 @@ import { BackgroundPattern } from "@/shared/components/common/background-pattern
 import { ToastProvider } from "@/shared/components/common/toast-provider";
 
 export const metadata: Metadata = {
-  title: "Node Solution",
+  title: "nod solution",
   description: "Building brands, spaces, and digital experiences.",
 };
 

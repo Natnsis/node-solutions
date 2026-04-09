@@ -15,7 +15,7 @@ export function ContactCta() {
             </div>
 
             <h2 className="mt-6 text-2xl font-semibold text-foreground md:text-3xl">
-              Thank you for your interest in Node Solution.
+              Thank you for your interest in nod solution.
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">

@@ -37,7 +37,7 @@ export function Footer() {
             <span>+1 555 123 2323</span>
             <span>New York, USA</span>
           </div>
-          <p>© 2025 Node Solution. All rights reserved.</p>
+          <p>© 2025 nod solution. All rights reserved.</p>
         </div>
       </div>
     </footer>

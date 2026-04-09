@@ -7,11 +7,11 @@ export function AboutIntroSection() {
       <div className="grid items-center gap-10 border-b border-border pb-14 md:pb-20 lg:grid-cols-2">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-            About Node Solution
+            About nod solution
           </h2>
 
           <p className="mt-6 text-sm leading-8 text-muted-foreground md:text-base">
-            Node Solution is a modern digital solutions company passionate about
+            nod solution is a modern digital solutions company passionate about
             helping businesses grow through thoughtful design, reliable technical
             delivery, and strategic execution. We work across digital marketing,
             creative branding, IT infrastructure, and business-focused digital

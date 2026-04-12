@@ -37,12 +37,12 @@ export function ServiceShowcaseSection({
           isOpen ? "shadow-glow" : ""
         }`}
       >
-        <button
-          type="button"
-          onClick={onToggle}
-          className="group grid w-full items-stretch text-left"
-          aria-expanded={isOpen}
-        >
+       <button
+  type="button"
+  onClick={onToggle}
+  className="group relative grid w-full items-stretch text-left"
+  aria-expanded={isOpen}
+>
           <div className="grid lg:grid-cols-[1.45fr_0.95fr]">
             <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
               <div className="flex items-start justify-between gap-6">
@@ -56,13 +56,17 @@ export function ServiceShowcaseSection({
                   </h2>
                 </div>
 
-                <div
-                  className={`accordion-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border bg-card ${
-                    isOpen ? "text-primary" : "text-foreground"
-                  } group-hover:text-primary`}
-                >
-                  <ChevronDown size={20} className={isOpen ? "rotate-180" : "rotate-0"} />
-                </div>
+                {/* Floating accordion arrow */}
+<div
+  className={`absolute bottom-4 right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-border shadow-md transition ${
+    isOpen ? "text-primary bg-white/70 " : "text-foreground bg-primary/85 "
+  }`}
+>
+  <ChevronDown
+    size={20}
+    className={`${isOpen ? "rotate-180" : "rotate-0 jiggle"}`}
+  />
+</div>
               </div>
 
               <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground">
@@ -70,9 +74,7 @@ export function ServiceShowcaseSection({
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <div className="inline-flex w-fit rounded-md border border-border bg-card px-4 py-2 text-sm text-foreground">
-                  Our design services include:
-                </div>
+                
 
                 {/* CTA → Contact with auto-select */}
                 <Button

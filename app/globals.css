@@ -589,3 +589,14 @@ button {
     animation: none;
   }
 }
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-12deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(6deg); }
+}
+
+.jiggle {
+  animation: jiggle 1.2s ease-in-out infinite;
+}
